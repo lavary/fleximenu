@@ -1,0 +1,14 @@
+{
+    "name": "lavary/fleximenu",
+    "description": "A flexible menu buidler in PHP",
+    "authors": [
+        {
+            "name": "Lavary",
+            "email": "mrl.8081@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "minimum-stability": "stable"
+}

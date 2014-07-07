@@ -101,7 +101,7 @@ class Menu {
 	{
 		$items = '';
 		
-		$element = ( in_array($type, ['ul', 'ol']) ) ? 'li' : $type;
+		$element = ( in_array($type, array('ul', 'ol')) ) ? 'li' : $type;
 		
 		foreach ($this->whereParent($pid) as $item)
 		{

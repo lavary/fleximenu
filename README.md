@@ -10,6 +10,8 @@ A flexible menu builder in PHP
 ```php
 <?php
 
+require_once('autoload.php');
+
 $menu = new Menu;
 
 $menu->add('Home', '');
@@ -42,15 +44,15 @@ $menu->filter( function($item){
 
 // Now we can render the menu as various HTML entities:
 
-echo $menu->asUl( array('class' => 'ausomw-ul') );
+echo $menu->asUl( array('class' => 'ausome-ul') );
 
 //OR
 
-echo $menu->asOl( array('class' => 'ausomw-ol') );
+echo $menu->asOl( array('class' => 'ausome-ol') );
 
 // OR
 
-echo $menu->asDiv( array('class' => 'ausomw-div') );
+echo $menu->asDiv( array('class' => 'ausome-div') );
 
 ?>
 ```

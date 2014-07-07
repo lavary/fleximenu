@@ -42,15 +42,15 @@ $menu->filter( function($item){
 
 // Now we can render the menu as various HTML entities:
 
-echo $menu->asUl( attribute('class' => 'ausomw-ul') );
+echo $menu->asUl( array('class' => 'ausomw-ul') );
 
 //OR
 
-echo $menu->asOl( attribute('class' => 'ausomw-ol') );
+echo $menu->asOl( array('class' => 'ausomw-ol') );
 
 // OR
 
-echo $menu->asDiv( attribute('class' => 'ausomw-div') );
+echo $menu->asDiv( array('class' => 'ausomw-div') );
 
 ?>
 ```

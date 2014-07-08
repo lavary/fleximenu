@@ -15,7 +15,13 @@ class Menu {
 	 */
 	protected $reserved = array('pid', 'url');
 	
-	
+	/**
+	* Last item's Id
+	*
+	* @var int
+	*/
+	protected $last_id;
+
 	/**
 	 * Create a new menu item
 	 *
@@ -28,7 +34,7 @@ class Menu {
 		$url  = $this->getUrl($options);
 		
 		// if $data contains 'pid' we  set the given pid 
-		$pid  = ( isset($options['pid']) ) ? $options['pid'] : null;
+		$pid  = ( is_array($options) && isset($options['pid']) ) ? $options['pid'] : null;
 		
 		// we seprate html attributes from reserved keys
 		$attr = ( is_array($options) ) ? $this->extractAttr($options) : array();
@@ -39,8 +45,20 @@ class Menu {
 		// Add the item to the menu array
 		array_push($this->menu, $item);
 		
+		$this->last_id = $this->last_id + 1;
+
 		// return the object just created
 		return $item;
+	}
+
+	/**
+	 * Generate a unique id for the item
+	 *
+	 * @return int
+	 */
+	public function id()
+	{
+		return $this->last_id + 1;
 	}
 
 
@@ -107,7 +125,7 @@ class Menu {
 		{
 			$items .= "\n<{$element}{$this->parseAttr($item->attributes())}>";                  
 
-			$items .= "<a href=\"{$item->link->url}\"{$this->parseAttr($item->link->attributes)}>{$item->link->text}</a>";
+			$items .= "<a href=\"{$item->link->url}\"{$this->parseAttr($item->link->attributes())}>{$item->link->text}</a>";
 
 			if( $item->hasChildren() ) {
 				

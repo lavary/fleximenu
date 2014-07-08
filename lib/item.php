@@ -58,7 +58,7 @@ class Item {
 	public function __construct($manager, $title, $url, $attributes = array(), $pid = 0)
 	{
 		$this->manager     = $manager;
-		$this->id          = $this->id();
+		$this->id          = $this->manager->id();
 		$this->pid         = $pid;
 		$this->title       = $title;
 		$this->attributes  = $attributes;
@@ -83,16 +83,6 @@ class Item {
 		$options['pid'] = $this->id;
 				
 		return $this->manager->add( $title, $options );
-	}
-
-	/**
-	 * Generate a unique id for the item
-	 *
-	 * @return int
-	 */
-	protected function id()
-	{
-		return $this->manager->length() + 1;
 	}
 
 	/**
@@ -145,7 +135,7 @@ class Item {
 	{
 		$args = func_get_args();
 
-		if(is_array($args[0])) {
+		if(isset($args[0]) && is_array($args[0])) {
 			$this->attributes = array_merge($this->attributes, $args[0]);
 			return $this;
 		}
@@ -172,7 +162,7 @@ class Item {
 	{
 		$args = func_get_args();
 
-		if(is_array($args[0])) {
+		if(isset($args[0]) && is_array($args[0])) {
 			$this->meta = array_merge($this->meta, $args[0]);
 			return $this;
 		}

@@ -22,7 +22,7 @@ $about = $menu->add('About', 'about');
 $about->link->append(' <span class="caret"></span>');
 
 // we can attach HTML attributes to the hyper-link as well
-$about->link->attributes(['class' => 'link-item', 'target' => '_blank']);
+$about->link->attributes(array('class' => 'link-item', 'target' => '_blank'));
 
 $about->attributes('data-model', 'nice');
 
@@ -44,15 +44,15 @@ $menu->filter( function($item){
 
 // Now we can render the menu as various HTML entities:
 
-echo $menu->asUl( array('class' => 'ausome-ul') );
+echo $menu->asUl( array('class' => 'awesome-ul') );
 
 //OR
 
-echo $menu->asOl( array('class' => 'ausome-ol') );
+echo $menu->asOl( array('class' => 'awesome-ol') );
 
 // OR
 
-echo $menu->asDiv( array('class' => 'ausome-div') );
+echo $menu->asDiv( array('class' => 'awesome-div') );
 
 ?>
 ```

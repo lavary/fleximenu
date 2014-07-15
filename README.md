@@ -1,7 +1,7 @@
 fleximenu
 =========
 
-A flexible menu builder in PHP
+A Simple menu builder in PHP
 
 
 ## Usage

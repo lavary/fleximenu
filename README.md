@@ -1,7 +1,7 @@
 fleximenu
 =========
 
-A Simple menu builder in PHP
+A basic menu builder in PHP
 
 
 **Attention** This package is a basic menu builder and has been developed for an educational purpose. If you're a Laravel developer and looking for a menu builder with advanced features you can check out [Laravel-menu](https://github.com/lavary/laravel-menu) 

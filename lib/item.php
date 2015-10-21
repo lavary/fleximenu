@@ -7,7 +7,7 @@ class Item {
 	 *
 	 * @var Menu
 	 */
-	protected $manager;
+	public $manager;
 	
 	/**
 	 * Item's id
